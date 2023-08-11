@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "GitaVerses",
+    "version": "1.0",
+    "description": "extension icon to receive a random shloka and discover timeless wisdom.",
+    "permissions": ["activeTab"],
+    "icons": {
+      "48": "/finalicon.png"
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "/finalicon.png"
+      }
+    }
+  }
+  
