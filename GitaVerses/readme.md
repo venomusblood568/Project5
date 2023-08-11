@@ -1,6 +1,6 @@
 # GitaVerse Explorer
 
-![Extension Icon](finalicon.png)
+![Extension Icon](icon.png)
 
 ## Description
 GitaVerse Explorer is a browser extension that allows you to engage with the sacred verses of the Bhagavad Gita, a revered spiritual text. By clicking the extension icon, you can access a randomly selected shloka (verse) from the Gita's teachings. This extension aims to provide a simple yet profound way to incorporate spiritual insights into your daily routine.
