@@ -1,0 +1,1 @@
+In this repository, I've outlined my plans to create approximately 10 designs during my holiday period. I'll continue to update this list if I decide to undertake more projects. Stay tuned for the creative journey ahead!
