@@ -14,7 +14,7 @@ The **BibleVerse Extension** is a [browser extension / software / app] that prov
 
 ## Installation
 
-1. [Download the latest release](https://github.com/venomusblood568/Project5/BibleVerseExtension/releases/latest) of the BibleVerse Extension.
+1. [Download the latest release](https://github.com/venomusblood568/Project5/HeavenlyScript/releases/latest) of the BibleVerse Extension.
 2. Follow the installation instructions for your specific browser or platform.
 
 ## Usage
@@ -26,7 +26,6 @@ The **BibleVerse Extension** is a [browser extension / software / app] that prov
 5. Bookmark verses by clicking the "Bookmark" button for easy access later.
 6. Customize the extension's settings to adjust the appearance and behavior.
 
-
 ## Contributing
 
 We welcome contributions from the community! If you have suggestions, bug reports, or would like to contribute code, please follow our [Contribution Guidelines](CONTRIBUTING.md).
@@ -37,7 +36,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or inquiries, please contact [your@email.com](mailto:your@email.com).
+For questions or inquiries, please contact [fallenjha@gmail.com](mailto:fallenjha@gmail.com).
 
 ---
 
