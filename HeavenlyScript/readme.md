@@ -14,7 +14,7 @@ The **BibleVerse Extension** is a [browser extension / software / app] that prov
 
 ## Installation
 
-1. [Download the latest release](https://github.com/venomusblood568/Project5/HeavenlyScript/releases/latest) of the BibleVerse Extension.
+1. [Download the latest release](https://github.com/venomusblood568/Project5/HeavenlyScript) of the BibleVerse Extension.
 2. Follow the installation instructions for your specific browser or platform.
 
 ## Usage
