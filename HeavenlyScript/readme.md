@@ -1,6 +1,6 @@
 # BibleVerse Extension
 
-![Extension Logo](logo.png)
+![Extension Logo](icon.png)
 
 The **BibleVerse Extension** is a [browser extension / software / app] that provides a comprehensive collection of all Bible verses, making it easy to access, search, and reference verses from the Bible.
 
