@@ -1,0 +1,63 @@
+basic information for imges 
+first 8 bytes : 89 50 4e 47 0d 0a 1a 0a (PNG file signature)
+last 12 bytes : 00 00 00 00 49 45 4e 44 ae 42 60 82 (....IEND.B`.|)
+
+Then chunks:
+IHDR = header 
+PLTE = palette table 
+IDAT = image data 
+IEND = end of file 
+
+
+
+
+
+first 8 bytes:
+The first 8 bytes of a PNG file are the file signature. The file signature is a unique sequence of bytes that identifies the file as a PNG file. The first 8 bytes of a PNG file are always:
+
+```
+89 50 4e 47 0d 0a 1a 0a
+```
+
+In hexadecimal, this is:
+
+```
+0x89 0x50 0x4e 0x47 0x0d 0x0a 0x1a 0x0a
+```
+
+In ASCII, this is:
+
+```
+\211 PNG \r \n \032 \n
+```
+
+The first byte, `0x89`, is a non-ASCII character that is used to distinguish PNG files from other file types. The next four bytes, `0x50 0x4e 0x47`, spell out the letters "PNG". The last two bytes, `0x0d 0x0a`, are newline characters.
+
+The file signature is used by image viewers and other software to identify PNG files. If the first 8 bytes of a file do not match the file signature, then the file is not a PNG file.
+
+
+
+
+
+
+
+
+
+
+some things you should know if you want to embed text in a PNG image:
+
+PNG is a lossless image format, which means that no data is lost when the image is compressed. This makes it a good choice for embedding text, as the text will be preserved even if the image is edited or compressed further.
+PNG images can store text in two ways:
+    Text chunks: These are special sections of the PNG file that are dedicated to storing text. Text chunks can be used to store arbitrary text, such as copyright information or author credits.
+    Alpha channel: The alpha channel is a part of the PNG file that stores transparency information. It can also be used to store hidden text, by setting the alpha values of the text pixels to zero.
+There are a number of tools available that can be used to embed text in PNG images. Some of these tools are:
+    * **ImageMagick: A popular command-line image processing tool that can be used to embed text in PNG images.
+    * **GIMP: A free and open-source image editing software that can also be used to embed text in PNG images.
+    * **Online tools: There are a number of online tools that can be used to embed text in PNG images. These tools are typically easy to use, but they may have fewer features than native tools.
+
+Here are some additional things to keep in mind when embedding text in a PNG image:
+
+* The amount of text that can be embedded in a PNG image is limited by the size of the alpha channel.
+* The text that is embedded in a PNG image will be hidden from view. If you want to make the text visible, you will need to edit the image and set the alpha values of the text pixels to a non-zero value.
+* Embedding text in a PNG image can make the image file larger. The amount of additional space required will depend on the amount of text that is embedded.
+
