@@ -11,25 +11,56 @@
         <div class="box">
             <h2>Grocery List</h2>
             <form id="Grocery">
-                <input id=""writelist type="text" placeholder="Write Grocery Item here" required> 
+                <input id="writeList" type="text" placeholder="Write Grocery Item here" required> 
                 <button>Add Item</button>
             </form>
         </div>
         <ol></ol>
         <script>
+            let groceryForm = document.getElementById('Grocery');
+            groceryForm.addEventListener('submit', addItem);
             
+            function addItem(e) {
+                e.preventDefault();
+                let data = document.getElementById('writeList').value;
+                let list = document.querySelector('ol');
+                let item = document.createElement('li');
+                let text = document.createElement('p');
+
+                text.textContent = data;
+                document.getElementById('writeList').value = "";
+                item.appendChild(text);
+                list.appendChild(item);
+
+                let removebutton = document.createElement('span');
+                removebutton.classList.add('remove');
+                item.append(removebutton);
+                removebutton.addEventListener('click',deleteItem);
+            }
+
+            function deleteItem(e){  
+                this.parentElement.remove();
+            }
         </script>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="waveWrapper waveAnimation">
         <div class="waveWrapperInner bgTop">
-          <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+            <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
         </div>
         <div class="waveWrapperInner bgMiddle">
-          <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+            <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
         </div>
         <div class="waveWrapperInner bgBottom">
-          <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+            <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
         </div>
-      </div>
+    </div>
 </body>
 </html>

@@ -26,7 +26,7 @@ body
 {
     position: relative;
     width: 400px;
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.7); /* Use rgba with an alpha value for transparency */
     padding: 20px;
     box-shadow: 15px 15px 15px rgba(0,0,0,0.1);   
 }
@@ -63,28 +63,45 @@ body
     cursor:pointer;
     outline: none;
 }
-.container ol
-{
+.container ol {
     position: relative;
-    padding: 10px 20px 10px 40px ;
+    padding: 10px 20px 10px 40px;
     width: 100%;
     min-height: 398px;
-    background: #fff repeating-linear-gradient(transparent 0%, transparent 99%, #000 99% , #000 100%);
+    background: rgba(255, 255, 255, 0.7); /* Use rgba with an alpha value for transparency */
     background-size: 50px 50px;
-    box-shadow: 15px 15px 15px rgba(0,0,0,0.1);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
 }
+
 .container ol li {
     position: relative;
     font-size: 1em;
-    height: 50px;
+    height: 30px;
+    line-height: 30px; /* Add line-height to vertically center text */
+}
+
+.container ol li .remove
+{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 27px;
+    height: 27px;
+    background-color: #ad1c1c;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it circular */
+    text-align: center;
+    line-height: 25px; /* Vertically centers the icon */
+    cursor: pointer;
     
 }
- 
 
-
-
-
-
+.container ol li .remove::before {
+    content: '\2212'; /* Unicode for a white minus sign */
+    display: block;
+    font-size: 24px; /* Adjust the font size to change the icon size */
+}
 
 
 
