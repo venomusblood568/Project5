@@ -3,65 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = 'icon' type = "image/png" href="/veggi.png">
+    <link rel="icon" type="image/png" href="/veggi.png">
     <title>Grocery_list</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
+<body style="margin: 0; padding: 0; box-sizing: border-box;">
+    <div class="loading-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #fff;">
+        <img src="/load.gif" alt="Loading" style="max-width: 100%; max-height: 100%;">
+    </div>
+         
+    <div class="container" style="display: none;">
         <div class="box">
             <h2>Grocery List</h2>
             <form id="Grocery">
-                <input id="writeList" type="text" placeholder="Write Grocery Item here" required> 
-                <button>Add Item</button>
+                <input id="writeList" type="text" placeholder="Write Grocery Item here" required style="position: relative; width: 100%; padding: 10px; border: 1px solid #333; outline: none;">
+                <button style="background: brown; color: #fff; min-width: 100px; font-weight: 500; border: 1px solid #333; cursor: pointer; outline: none;">Add Item</button>
             </form>
         </div>
-        <ol></ol>
-        <script>
-            let groceryForm = document.getElementById('Grocery');
-            groceryForm.addEventListener('submit', addItem);
-            
-            function addItem(e) {
-                e.preventDefault();
-                let data = document.getElementById('writeList').value;
-                let list = document.querySelector('ol');
-                let item = document.createElement('li');
-                let text = document.createElement('p');
-
-                text.textContent = data;
-                document.getElementById('writeList').value = "";
-                item.appendChild(text);
-                list.appendChild(item);
-
-                let removebutton = document.createElement('span');
-                removebutton.classList.add('remove');
-                item.append(removebutton);
-                removebutton.addEventListener('click',deleteItem);
-            }
-
-            function deleteItem(e){  
-                this.parentElement.remove();
-            }
-        </script>
+        <ol style="position: relative; padding: 10px 20px 10px 40px; width: 100%; min-height: 398px; background: rgba(255, 255, 255, 0.7); background-size: 50px 50px; box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);"></ol>
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="waveWrapper waveAnimation">
         <div class="waveWrapperInner bgTop">
-            <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+            <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');"></div>
         </div>
         <div class="waveWrapperInner bgMiddle">
-            <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+            <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');"></div>
         </div>
         <div class="waveWrapperInner bgBottom">
-            <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+            <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');"></div>
         </div>
     </div>
+    <script>
+        let groceryForm = document.getElementById('Grocery');
+        groceryForm.addEventListener('submit', addItem);
+        
+        function addItem(e) {
+            e.preventDefault();
+            let data = document.getElementById('writeList').value;
+            let list = document.querySelector('ol');
+            let item = document.createElement('li');
+            let text = document.createElement('p');
+
+            text.textContent = data;
+            document.getElementById('writeList').value = "";
+            item.appendChild(text);
+            list.appendChild(item);
+
+            let removebutton = document.createElement('span');
+            removebutton.classList.add('remove');
+            item.append(removebutton);
+            removebutton.addEventListener('click', deleteItem);
+        }
+
+        function deleteItem(e){  
+            this.parentElement.remove();
+        }
+
+        // JavaScript to hide the loading screen after 3 seconds
+        window.onload = function () {
+            setTimeout(function () {
+                document.querySelector('.loading-container').style.display = 'none'; // Corrected selector
+                document.querySelector('.container').style.display = 'block';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        };
+    </script>
 </body>
 </html>
