@@ -3,27 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/CAT-removebg-preview.png">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/06/a3/e2/06a3e2ee28e7c0e0760e0acdfc9d3fd6.png">
     <link rel="stylesheet" href="style.css">
     <title>project5</title>
 </head>
 <body>
-    <!--js of the project5-->
-    <script>
-        // JavaScript to hide the loading screen after 3 seconds
-        window.onload = function () {
-            setTimeout(function () {
-                document.querySelector('.loading-container').style.display = 'none'; // Corrected selector
-                document.querySelector('.container').style.display = 'block';
-            }, 6840); // 3000 milliseconds = 3 seconds
-        };
-    </script>
     <div>
         <!--loading screen-->
         <div class="loading-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; display: flex; justify-content: center; align-items: center;">
-            <img src="/loader.gif" alt="Loading" style="max-width: 30%; max-height: 30%;">
+            <img id="loading-image" alt="Loading" style="max-width: 30%; max-height: 30%;">
         </div>
-        
     </div>
+
+    <!-- JavaScript for the project5 -->
+    <script>
+        // Replace this URL with the image URL you want to fetch
+        const imageUrl = "https://i.pinimg.com/originals/ec/43/5e/ec435e3b38da56bb7c732a7adfd46704.gif";
+
+        // Get a reference to the image element
+        const imageElement = document.getElementById("loading-image");
+
+        // Set the image source to the specified URL
+        imageElement.src = imageUrl;
+
+        // JavaScript to hide the loading screen after 6 seconds (approx) cause that's the total length of the gif
+        window.onload = function () {
+            setTimeout(function () {
+                document.querySelector('.loading-container').style.display = 'none';
+                // You can add more code here for what you want to do after the loading screen disappears
+            }, 6840); // 6840 milliseconds = 6.84 seconds
+        };
+    </script>
 </body>
 </html>
