@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/06/a3/e2/06a3e2ee28e7c0e0760e0acdfc9d3fd6.png">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.7.3/dist/alpine.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title style="font-family:'Courier New', Courier, monospace">Project 5</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
 </head>
 <body>
     <!-- Loading screen -->
@@ -17,20 +19,20 @@
     <!-- Actual content (hidden until loaded) -->
     <div style="display: none;" id="content-container">
         <h1 class="title" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Project 5</h1>
-        <div class="slider" x-data="{start: true, end: false}">
-            <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+        <div class="slider">
+            <div class="slider__content" id="slider">
                 <!-- Slider items go here -->
                 <div class="slider__item">
                     <img class="slider__image" src="https://i.pinimg.com/564x/6b/8a/d2/6b8ad298867c813b96d034d186645298.jpg" alt="Image">
-                    <div class="slider__info">                    
+                    <div class="slider__info">
                         <a href="Figma.html" style="font-family: monospace; font-size: 30px; color: white; text-decoration: none;">Figma</a>
                     </div>
                 </div>
                 <!-- Add more slider items here -->
             </div>
             <div class="slider__nav">
-                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
-                <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+                <button class="slider__nav__button" onclick="scrollSlider(-1)">Previous</button>
+                <button class="slider__nav__button" onclick="scrollSlider(1)">Next</button>
             </div>
         </div>
     </div>
@@ -58,6 +60,25 @@
                 // You can add more code here for what you want to do after the loading screen disappears
             }, 6840); // 6840 milliseconds = 6.84 seconds
         };
+
+        // JavaScript for scrolling the slider
+        const slider = document.getElementById('slider');
+        let currentIndex = 0;
+
+        function scrollSlider(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            } else if (currentIndex >= slider.children.length) {
+                currentIndex = slider.children.length - 1;
+            }
+
+            const scrollAmount = currentIndex * slider.clientWidth;
+            slider.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
