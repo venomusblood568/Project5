@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/06/a3/e2/06a3e2ee28e7c0e0760e0acdfc9d3fd6.png">
+
+    <title>project5</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+
+        :root {
+            --bg: #000000;
+            --clr-1: #00c2ff;
+            --clr-2: #33ff8c;
+            --clr-3: #ffc640;
+            --clr-4: #e54cff;
+
+            --blur: 1rem;
+            --fs: clamp(3rem, 8vw, 7rem);
+            --ls: clamp(-1.75px, -0.25vw, -3.5px);
+        }
+
+        body, html {
+                height: 100vh; /* Use viewport height to fill the entire screen */
+                display: flex; /* Use flexbox for centering */
+                justify-content: center;
+                align-items: center;
+                background-color: var(--bg);
+                color: #fff;
+                font-family: "Inter", "DM Sans", Arial, sans-serif;
+                margin: 0;
+                overflow: hidden; /* Prevent scrolling */
+            }
+
+        *,
+        *::before,
+        *::after {
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .content {
+            text-align: center;
+            display: none;
+        }
+
+        .title {
+            font-size: var(--fs);
+            font-weight: 800;
+            letter-spacing: var(--ls);
+            position: relative;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .subtitle {
+        }
+
+        .aurora {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            mix-blend-mode: darken;
+            pointer-events: none;
+        }
+
+        .aurora__item {
+            overflow: hidden;
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            background-color: var(--clr-1);
+            border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+            filter: blur(var(--blur));
+            mix-blend-mode: overlay;
+        }
+
+        .aurora__item:nth-of-type(1) {
+            top: -50%;
+            animation: aurora-border 6s ease-in-out infinite,
+            aurora-1 12s ease-in-out infinite alternate;
+        }
+
+        .aurora__item:nth-of-type(2) {
+            background-color: var(--clr-3);
+            right: 0;
+            top: 0;
+            animation: aurora-border 6s ease-in-out infinite,
+            aurora-2 12s ease-in-out infinite alternate;
+        }
+
+        .aurora__item:nth-of-type(3) {
+            background-color: var(--clr-2);
+            left: 0;
+            bottom: 0;
+            animation: aurora-border 6s ease-in-out infinite,
+            aurora-3 8s ease-in-out infinite alternate;
+        }
+
+        .aurora__item:nth-of-type(4) {
+            background-color: var(--clr-4);
+            right: 0;
+            bottom: -50%;
+            animation: aurora-border 6s ease-in-out infinite,
+            aurora-4 24s ease-in-out infinite alternate;
+        }
+
+        @keyframes aurora-1 {
+            0% {
+                top: 0;
+                right: 0;
+            }
+
+            50% {
+                top: 100%;
+                right: 75%;
+            }
+
+            75% {
+                top: 100%;
+                right: 25%;
+            }
+
+            100% {
+                top: 0;
+                right: 0;
+            }
+        }
+
+        @keyframes aurora-2 {
+            0% {
+                top: -50%;
+                left: 0%;
+            }
+
+            60% {
+                top: 100%;
+                left: 75%;
+            }
+
+            85% {
+                top: 100%;
+                left: 25%;
+            }
+
+            100% {
+                top: -50%;
+                left: 0%;
+            }
+        }
+
+        @keyframes aurora-3 {
+            0% {
+                bottom: 0;
+                left: 0;
+            }
+
+            40% {
+                bottom: 100%;
+                left: 75%;
+            }
+
+            65% {
+                bottom: 40%;
+                left: 50%;
+            }
+
+            100% {
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        @keyframes aurora-4 {
+            0% {
+                bottom: -50%;
+                right: 0;
+            }
+
+            50% {
+                bottom: 0%;
+                right: 40%;
+            }
+
+            90% {
+                bottom: 50%;
+                right: 25%;
+            }
+
+            100% {
+                bottom: -50%;
+                right: 0;
+            }
+        }
+
+        @keyframes aurora-border {
+            0% {
+                border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+            }
+
+            25% {
+                border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+            }
+
+            50% {
+                border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+            }
+
+            75% {
+                border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+            }
+
+            100% {
+                border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+            }
+        }
+
+        /* Button Styles */
+        .start-button {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+     <!--loading screen -->
+     <div class="loading-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; display: flex; justify-content: center; align-items: center;">
+        <img id="loading-image" alt="Loading" style="max-width: 30%; max-height: 30%;">
+    </div>
+    <div class="content">
+        <h1 class="title">The project5</h1>
+        <p style="font-family: monospace; font-size:15px;" class="subtitle">Behold my trove of projects and creative gems, forged during a five-month odyssey of enrichment.</p>
+    </div>
+    <div class="aurora">
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+    </div>
+
+    <script>
+        // Replace this URL with the image URL you want to fetch
+        const imageUrl = "https://i.pinimg.com/originals/ec/43/5e/ec435e3b38da56bb7c732a7adfd46704.gif";
+
+        // Get a reference to the image element
+        const imageElement = document.getElementById("loading-image");
+
+        // Set the image source to the specified URL
+        imageElement.src = imageUrl;
+
+        // JavaScript to hide the loading screen after 6 seconds (approx) because that's the total length of the gif
+        window.onload = function () {
+            setTimeout(function () {
+                document.querySelector('.loading-container').style.display = 'none';
+                // Show the content after the loader disappears
+                document.querySelector('.content').style.display = 'block';
+                // Create and append the "Begin" button
+                const beginButton = document.createElement("button");
+                beginButton.className = "start-button";
+                beginButton.textContent = "Load the project's";
+                beginButton.onclick = beginAnimation;
+                document.body.appendChild(beginButton);
+            }, 6840); // 6840 milliseconds = 6.84 seconds
+        };
+
+        function beginAnimation() {
+            // Redirect to another HTML page
+            window.location.href = '/project5.html';
+        }
+    </script>
+</body>
+</html>
