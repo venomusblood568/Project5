@@ -1,12 +1,12 @@
-# BibleVerse Extension
+# HeavenlyScript Extension
 
 ![Extension Logo](icon.png)
 
-The **BibleVerse Extension** is a [browser extension / software / app] that provides a comprehensive collection of all Bible verses, making it easy to access, search, and reference verses from the Bible.
+The **HeavenlyScript Extension** is a [browser extension / software / app] that provides a comprehensive collection of all HeavenlyScript verses, making it easy to access, search, and reference verses from the HeavenlyScript.
 
 ## Features
 
-- Access to the entire collection of Bible verses.
+- Access to the entire collection of HeavenlyScript verses.
 - Search for specific verses using keywords, book, chapter, and verse references.
 - Bookmark favorite verses for quick access.
 - Share verses with friends and family through social media or other communication channels.
@@ -14,7 +14,7 @@ The **BibleVerse Extension** is a [browser extension / software / app] that prov
 
 ## Installation
 
-1. [Download the latest release](https://github.com/venomusblood568/Project5/tree/main/HeavenlyScript) of the BibleVerse Extension.
+1. [Download the latest release](https://github.com/venomusblood568/Project5/tree/main/HeavenlyScript) of the HeavenlyScript Extension.
 2. Follow the installation instructions for your specific browser or platform.
 
 ## Usage
