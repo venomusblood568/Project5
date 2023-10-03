@@ -6,7 +6,7 @@ pygame.init()
 # color scheme of the frame 
 black = (0, 0, 0)
 grey = (128, 128, 128)
-yellow = (255, 255, 255)
+yellow = (255, 255, 0)
 
 # basic setting of the frame 
 width, height = 800, 800
