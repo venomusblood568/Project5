@@ -4,7 +4,7 @@
 - [x] Navigation
 - [x] Introduction
 - [x] Experience
-- [ ] Technologies *(In Progress)*
+- [x] Technologies
 - [ ] Portfolio *(In Progress)*
 - [ ] Client Feedbacks *(Pending Review)*
 - [ ] Contact Details *(To Be Added)*
