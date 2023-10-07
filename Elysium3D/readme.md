@@ -14,5 +14,5 @@
 - Note: Stars indicate completion or pending tasks.
 
 ## BUGS
-- [ ] balls dont rotate
+- [ ] tech ball dont rotate automatically which should be
 
