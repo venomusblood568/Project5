@@ -1,4 +1,3 @@
-Certainly! Here's a simplified version of the README.md file for your Tic-Tac-Toe game project using Pygame.
 
 ---
 
