@@ -8,7 +8,7 @@ Make sure you have Python and Pygame installed on your system.
 
 1. **Clone the repository:**
     ```
-    git clone <repository-url>
+    git clone <[repository-url](https://github.com/venomusblood568/Project5/tree/main/SNAKE_GAME)>
     ```
 
 2. **Navigate to the directory:**
