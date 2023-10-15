@@ -14,16 +14,16 @@ Rusher is a basic platformer game created using Python and the Pygame library. T
 2. **Running the Game:** Run the `main.py` file to start the game. Use the left and right arrow keys to move, and the spacebar to jump.
 
 ## Game Features
+| Feature                 | Status         | Future Plan                  | Status             |
+|-------------------------|----------------|------------------------------|--------------------|
+| Player Movement         | Done           | Score System                 | Planning           |
+| Basic Collision Detection| Done           | Basic Enemy                   | planning|
+| Jumping                 | Done           | Advanced Enemy AI            |  Planning  |
+| Double Jump             | Done           | Power-ups Implementation     | Planning  |
+| Scrolling Background    | Done           | Level Design and Layout      | Planning           |
+| Fire object          |Wokring    | Sound Effects and Music      | Planning           |
+| Spikes         | Next   |              Lives / chances                |       Planning              |
 
-| Feature | Status |
-| --- | --- |
-| Player Movement | Done |
-| Basic Collision Detection | Done |
-| Jumping | Done |
-| Double Jump | Done |
-| Scrolling Background | Done |
-| Score System | Not Started |
-| Trap Animation | Not Started |
 
 ## How to Play
 
