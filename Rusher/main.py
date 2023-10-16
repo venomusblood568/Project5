@@ -6,7 +6,7 @@ from os.path import isfile, join
 pygame.init()
 
 WIDTH, HEIGHT = 1350, 750
-FPS = 60
+FPS = 80
 player_velocity = 3
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Rusher")
@@ -282,6 +282,7 @@ def handle_move(player, objects, left_wall):
             player.make_hit()
 
 
+
 def main(window):
     clock = pygame.time.Clock()
     background, bg_image = get_background("Blue.png")
@@ -289,8 +290,89 @@ def main(window):
     block_size = 96
 
     player = Player(100, 100, 50, 50)
-    fire = Fire(260, HEIGHT - block_size - 64, 16, 32)
-    fire.on()
+        # Fire(300, HEIGHT - block_size * 3 - 63, 16, 32) for top of the block 
+    fires = [
+        Fire(300, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire(780, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire(900, HEIGHT - block_size * 5 - 63, 16, 32),
+        Fire(1800, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire(1860, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire(2000, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (2060, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (2900, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (2950, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (3250, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (3300, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (4430, HEIGHT - block_size * 3 - 63, 16, 32),
+        # line of fire 
+        Fire (5600, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5650, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5700, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5750, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5800, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5850, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5900, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (5950, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6000, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6050, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6200, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6250, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6300, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6350, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6400, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6450, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6500, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6550, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6600, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6650, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6700, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6750, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6800, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6850, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6900, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (6950, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7000, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7050, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7100, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7150, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7200, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7250, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7300, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7350, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7400, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7450, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7500, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7550, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7600, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7650, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7700, HEIGHT - block_size * 1 - 63, 16, 32),
+        Fire (7750, HEIGHT - block_size * 1 - 63, 16, 32),
+        # 4 fire pair
+        Fire (8705, HEIGHT - block_size * 3 - 63, 16, 32),
+        Fire (8760, HEIGHT - block_size * 3 - 63, 16, 32),
+        Fire (8805, HEIGHT - block_size * 3 - 63, 16, 32),
+        Fire (8860, HEIGHT - block_size * 3 - 63, 16, 32),
+        # 4 fire pair 
+        Fire (9805, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (9860, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (9905, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (9960, HEIGHT - block_size * 2 - 63, 16, 32),
+        # 4 fire pair
+        Fire (11005, HEIGHT - block_size * 4 - 63, 16, 32),
+        Fire (11060, HEIGHT - block_size * 4 - 63, 16, 32),
+        Fire (11105, HEIGHT - block_size * 4 - 63, 16, 32),
+        Fire (11160, HEIGHT - block_size * 4 - 63, 16, 32),
+        # Block(12000, HEIGHT - block_size * 3, block_size),
+        Fire (11905, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (11960, HEIGHT - block_size * 2 - 63, 16, 32),
+        Fire (12000, HEIGHT - block_size * 3 - 63, 16, 32),
+        Fire (12060, HEIGHT - block_size * 3 - 63, 16, 32),
+        ]        
+
+    
+    # Set the initial animation state of fire objects to "on"
+    for fire in fires:
+        fire.on()
 
     # Create the floor
     floor = [Block(i * block_size, HEIGHT - block_size, block_size)
@@ -323,27 +405,30 @@ def main(window):
             Block(2500, HEIGHT - block_size * 5, block_size),
             Block(2700, HEIGHT - block_size * 2, block_size),
             Block(2800, HEIGHT - block_size * 3, block_size),
+            #
             Block(3000, HEIGHT - block_size * 2, block_size),
             Block(3000, HEIGHT - block_size * 3, block_size),
             Block(3000, HEIGHT - block_size * 4, block_size),
             Block(3140, HEIGHT - block_size * 2, block_size),
             Block(3140, HEIGHT - block_size * 3, block_size),
             Block(3140, HEIGHT - block_size * 4, block_size),
-            Block(3300, HEIGHT - block_size * 3, block_size),
-            Block(3400, HEIGHT - block_size * 2, block_size),
-            Block(3500, HEIGHT - block_size * 5, block_size),
-            Block(3600, HEIGHT - block_size * 6, block_size),
+            #
+            Block(3340, HEIGHT - block_size * 3, block_size),
+            Block(3440, HEIGHT - block_size * 2, block_size),
+
             Block(3700, HEIGHT - block_size * 3, block_size),
             Block(3700, HEIGHT - block_size * 2, block_size),
             Block(3800, HEIGHT - block_size * 2, block_size),
-            # stacking of the three block
+            # stacking of the three block below 
             Block(4000, HEIGHT - block_size * 6, block_size),
             Block(4000, HEIGHT - block_size * 5, block_size),
             Block(4000, HEIGHT - block_size * 4, block_size), 
-            Block(4100, HEIGHT - block_size * 3, block_size),
+            #
+            Block(4100, HEIGHT - block_size * 4, block_size),
             Block(4300, HEIGHT - block_size * 2, block_size),
             Block(4400, HEIGHT - block_size * 3, block_size),
             Block(4500, HEIGHT - block_size * 2, block_size),
+            # above the place where i place fire in the middle of the block
             Block(4600, HEIGHT - block_size * 6, block_size),
             Block(4800, HEIGHT - block_size * 5, block_size),
             Block(4900, HEIGHT - block_size * 4, block_size),
@@ -353,12 +438,13 @@ def main(window):
             Block(5300, HEIGHT - block_size * 4, block_size),   
             Block(5400, HEIGHT - block_size * 2, block_size), 
             Block(5500, HEIGHT - block_size * 2, block_size),   
-            Block(5600, HEIGHT - block_size * 3, block_size),     
+            Block(5600, HEIGHT - block_size * 3, block_size),
             Block(5800, HEIGHT - block_size * 4, block_size),   
             Block(5900, HEIGHT - block_size * 4, block_size),   
             Block(6000, HEIGHT - block_size * 5, block_size),   
             Block(6100, HEIGHT - block_size * 2, block_size),  
             Block(6100, HEIGHT - block_size * 3, block_size), 
+            # fire floor
             Block(6200, HEIGHT - block_size * 6, block_size),   
             Block(6300, HEIGHT - block_size * 6, block_size),   
             Block(6400, HEIGHT - block_size * 6, block_size),   
@@ -373,6 +459,7 @@ def main(window):
             Block(7300, HEIGHT - block_size * 4, block_size),
             Block(7500, HEIGHT - block_size * 5, block_size),
             Block(7700, HEIGHT - block_size * 6, block_size),
+            #
             Block(7800, HEIGHT - block_size * 2, block_size),
             Block(7900, HEIGHT - block_size * 2, block_size),
             Block(7900, HEIGHT - block_size * 3, block_size),
@@ -385,6 +472,7 @@ def main(window):
             Block(8500, HEIGHT - block_size * 7, block_size),
             Block(8600, HEIGHT - block_size * 7, block_size),
             Block(8700, HEIGHT - block_size * 3, block_size),
+            #
             Block(8800, HEIGHT - block_size * 3, block_size),
             Block(9000, HEIGHT - block_size * 5, block_size),
             Block(9100, HEIGHT - block_size * 5, block_size),
@@ -395,6 +483,7 @@ def main(window):
             Block(9600, HEIGHT - block_size * 3, block_size),
             Block(9700, HEIGHT - block_size * 4, block_size),
             Block(9800, HEIGHT - block_size * 2, block_size),
+            #
             Block(9900, HEIGHT - block_size * 2, block_size),
             Block(10000, HEIGHT - block_size * 5, block_size),
             Block(10100, HEIGHT - block_size * 5, block_size),
@@ -405,6 +494,7 @@ def main(window):
             Block(10600, HEIGHT - block_size * 6, block_size),
             Block(10700, HEIGHT - block_size * 6, block_size),
             Block(10800, HEIGHT - block_size * 5, block_size),
+            #
             Block(10900, HEIGHT - block_size * 5, block_size),
             Block(11000, HEIGHT - block_size * 4, block_size),
             Block(11100, HEIGHT - block_size * 4, block_size),
@@ -469,6 +559,8 @@ def main(window):
             fire  ]
 
 
+    # Concatenating the fires with the existing objects
+    objects += fires
     offset_x = 0
     scroll_area_width = 200
 
@@ -486,7 +578,11 @@ def main(window):
                     player.jump()
 
         player.loop(FPS)
-        fire.loop()
+        
+        # Loop through Fire objects and update their animation
+        for fire in fires:
+            fire.loop()
+
         handle_move(player, objects, left_wall)
         draw(window, background, bg_image, player, objects, offset_x)
 
@@ -499,3 +595,6 @@ def main(window):
 
 if __name__ == "__main__":
     main(window)
+
+
+
