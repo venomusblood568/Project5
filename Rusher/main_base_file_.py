@@ -7,7 +7,7 @@ from os.path import isfile, join
 pygame.init()
 
 #name of the window or the game 
-pygame.display.set_caption("Platformer_game")
+pygame.display.set_caption("Rusher")
 
 #frame dimesion
 WIDTH, HEIGHT = 1120, 750
