@@ -1,0 +1,51 @@
+flow of the code and all the netural network
+
+Game (Pygame) (file 1)
+- play_step(action)
+-> reward, game_over, score
+
+Agent (file 2)
+- game
+- model
+Training:
+- state = get_state(game)
+- action = get_move(state):
+- model.predict
+- reward, game_over, score = game.play_step(action)
+- new_state = get_state(game)
+- remember
+- model. train
+
+Model (PyTorch) (file 3)
+Linear QNet (DQN)
+- model.predict(state)
+-> action
+
+THING I USED BUT DONT KNOW SO HERE ARE THEY
+
+deque = A deque (double-ended queue) is a data structure that allows elements to be inserted and removed from both ends efficiently. 
+        It supports operations like push and pop from both the front and the back. 
+        Deques are useful for scenarios where elements need to be added or removed from both ends with constant time complexity.
+
+IPython = IPython is an interactive shell for the Python programming language, providing features like tab completion, syntax highlighting, and the ability to run shell commands. 
+          It offers an enhanced interactive experience and is widely used by researchers and data analysts. 
+          It also supports Jupyter Notebook, a web-based environment for creating interactive documents containing code, visualizations, and text.
+
+LinearQNet  
+Definition: LinearQNet is a Q-learning model in reinforcement learning.
+Representation: Q-values are approximated using a linear combination of features derived from state-action pairs.
+FORMULA = look online
+Purpose: Handles large state spaces and complex environments by approximating Q-values efficiently.
+
+
+=======================================================================================================================================================================================================================================================================
+Predicted Q values with the current state
+        pred = self.model(state)
+
+        target = pred.clone()
+        for idx in range(len(done)):
+            Q_new = reward[idx]
+            if not done[idx]:
+                Q_new = reward[idx] + self.gamma * torch.max(self.model(next_state[idx]))
+
+            target[idx][torch.argmax(action[idx]).item()] = Q_new
