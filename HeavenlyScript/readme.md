@@ -39,5 +39,3 @@ This project is licensed under the [MIT License](LICENSE).
 For questions or inquiries, please contact [fallenjha@gmail.com](mailto:fallenjha@gmail.com).
 
 ---
-
-**Note:** This README template is a basic example. Make sure to customize it according to your project's specifics. Include additional sections as needed, such as "FAQs," "Known Issues," "Changelog," etc.
