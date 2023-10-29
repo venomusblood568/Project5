@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Seraphic",
+    "version": "1.0",
+    "description": "We will meet soon",
+    "permissions": [
+        "activeTab"
+    ],
+    "icons": {
+        "48": "/android-chrome-192x192.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
