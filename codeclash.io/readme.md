@@ -13,7 +13,7 @@ CodeClash.io is your ultimate destination for thrilling coding competitions. Cha
 
 ---
 Rough design idea 
-![Design](design.png)
+![Design](Design.png)
 
 ---
 i will made more thing in this readme file as i progress.....
