@@ -41,6 +41,9 @@ Installation
 
     `python space_x.py`
 
+6. Sample run:
+   ![Space X Gameplay](sample.png)
+
 Dependencies
 ------------
 
