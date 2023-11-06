@@ -31,4 +31,8 @@ Contributions
 
 Contributions and suggestions are welcome! Feel free to open an issue or create a pull request if you find any mistakes or want to enhance the content.
 
+link for original_repo
+-----------------
+https://github.com/KhanradCoder/LearnMachineLearning/tree/master
+
 Happy learning! 🚀
