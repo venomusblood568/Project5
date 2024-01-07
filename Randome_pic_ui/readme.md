@@ -37,7 +37,3 @@ This is a simple iOS app that displays a random image from Unsplash and changes 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-Remember to replace placeholders like `your-username` with your actual username and make adjustments according to your specific project details. Additionally, you may want to add more sections like "Contributing," "Acknowledgments," or "Troubleshooting" based on the nature of your project.
