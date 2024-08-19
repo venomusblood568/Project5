@@ -31,17 +31,8 @@ Rusher is a basic platformer game created using Python and the Pygame library. T
 - Press the spacebar to make the player jump.
 - Avoid the traps represented by the fire objects.
 
-## Contributions
-
-Contributions are welcome! If you have any ideas for improvements, feel free to fork the repository and submit a pull request.
-
-## Known Issues
-
-Please feel free to contribute to resolving these issues.
-
-## Credits
-
-- Pygame: Pygame is a set of Python modules designed for writing video games. [pygame.org](https://www.pygame.org/)
-- Sprites and Assets: Sprites and assets used in the game are from various sources and are credited within the code.
 
 Enjoy playing Rusher!
+
+# sample screenshot!!
+(ss.png)
