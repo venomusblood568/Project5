@@ -36,4 +36,3 @@ This extension is intended for personal and educational purposes. The verses pre
 
 ---
 
-Feel free to download, modify, and distribute this extension in alignment with the provided license.
